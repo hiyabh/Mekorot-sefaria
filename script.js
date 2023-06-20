@@ -1,32 +1,3 @@
-// $(document).ready(function () {
-//   $("#source-form").on("submit", function (e) {
-//     e.preventDefault();
-//     var source = $("#source").val();
-
-//     $("#response").html("הלכנו להביא את המקור, אנא המתן...");
-
-//     $.ajax({
-//       url:
-//         "https://www.sefaria.org/api/texts/" +
-//         source +
-//         "?context=0&pad=0&lang=he",
-//       type: "GET",
-//       success: function (data) {
-//         if (data.error) {
-//           console.log("data.error: ", data.error);
-//           $("#response").html("המקור לא נמצא, אנא הכנס מקור אחר.");
-//         } else {
-//           $("#response").html(data.he, null, 2);
-//         }
-//       },
-//       error: function (jqXHR, textStatus, errorThrown) {
-//         console.log("error: ", JSON.stringify(jqXHR));
-//         $("#response").html("Error: " + errorThrown);
-//       },
-//     });
-//   });
-// });
-
 $(document).ready(function () {
   $("#source-form").on("submit", function (e) {
     e.preventDefault();
@@ -62,6 +33,10 @@ $(document).ready(function () {
                     "</p></div>"
                 );
               }
+            });
+            $(".comments").each(function () {
+              var delay = $(this).index();
+              $(this).css("animation-delay", delay + "s");
             });
           }
         }
