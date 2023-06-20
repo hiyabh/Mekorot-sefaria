@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+  <head>
+    <title>Sefaria API Example</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container">
+        <h1>בקשת מקורות מאתר ספריא</h1>
+        <h4>יצירת מראי מקומות נכונים לבקשה:</h4>
+        <p>
+          סימני פסוק אינם אמורים לעורר בעיות: רווח, פסיק, נקודה או נקודתיים
+          ברפרנס יהיו בסדר. למקף (-) יש משמעות מיוחדת: הוא מסמן טווח. כל מקף מיותר עלול להכשיל את הזיהוי. המחולל מסוגל לזהות
+          כמה סוגי ניסוח נפוצים לאותו מקור. לדוגמה, את מלכים ב הוא יזהה עבור
+          הכותרות: מלכים ב׳, ו-מל"ב. העיקרון הכללי הוא לציין מראה מקום מלא בלי
+          לכלול שום דבר אחר. המחולל פועל גם ברמת הפרק או הפסוק ומזהה גם טווח
+          מוגדר של פסוקים. על כן אפשרויות אלה תקינות:
+        </p>
+        <code
+          >מלכים ב' א | מל"ב א:ה | מל"ב א ה | מל"ב א-ד | מל"ב ב:ג-ו | מל"ב
+          ב:ג-ג:ג | מל"ב ב, ג | מל"ב פרק ב פסוק ג | שבת ז: | שבת דף ז עמוד ב | רי"ף שבת ז:</code>
+      </div>
+      <form id="source-form">
+        <div class="input-group">
+          <input type="text" id="source" placeholder="הזן מקור..." />
+        </div>
+        <div class="input-label">
+          <label for="commentary"
+            >האם להוסיף גם פירושים? (אנא בחר מקור מדויק ככל שאפשר)</label
+          >
+          <input type="checkbox" id="commentary" />
+        </div>
+        <button class="btn" id="fetch" type="submit">שלח</button>
+      </form>
+      <div class="response" id="response"></div>
+      <div id="commentaries"></div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
