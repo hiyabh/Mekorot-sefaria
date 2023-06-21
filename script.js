@@ -15,7 +15,7 @@ $(document).ready(function () {
       type: "GET",
       success: function (data) {
         if (data.error) {
-          $("#response").html("המקור לא נמצא, אנא הכנס מקור אחר.");
+          $("#response").html("המקור לא נמצא, אנא הכניסו מקור אחר או בדקו שוב את צורת ההכנסה...");
         } else {
           $("#title").text(source + ":");
           $("#response").html(data.he, null, 2);
